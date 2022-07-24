@@ -1,0 +1,477 @@
+body{
+    margin: 0px;
+}
+
+header{
+    height: 77px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header a{
+ font-size: 1.2em;
+ color: black;
+ text-decoration: none;
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ font-weight: bold;
+}
+
+#logo{
+    display: flex;
+    justify-content: center;
+}
+
+#logo img{
+    width: 49%;
+    
+}
+#image_restaurant img{
+    height:512px ;
+    width: 100%;
+    object-fit: cover;
+    visibility: hidden;
+    animation: visibility  3ms linear 850ms  forwards;
+}
+
+@keyframes visibility{
+    100%{
+        visibility: visible;
+    }
+}
+#carte{
+    background-color: #f6f6f6;
+    width: 95%;
+    height: 479px;
+    padding-bottom: 154px;
+    z-index: 1;
+    position: absolute;
+    top: 529px;
+    border-radius: 30px 30px 0px 0px ;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(-420px);
+    animation: deplacement  20ms linear 800ms  forwards;
+}
+.titre_presentation h2{
+    width: 83px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #99e2d0;
+}
+#header_card{
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+
+
+
+@keyframes deplacement{
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+#nom_du_restaurant{
+    z-index: 3;
+    visibility: hidden;
+    margin: 30px;
+    animation: apparition 20ms linear 850ms  forwards;
+}
+
+@keyframes apparition {
+    100%{
+        visibility: visible;
+    }
+}
+
+.entrées_plats_desserts{
+    
+    width: 32%;
+    margin-top: 109px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selections_menu_entrées{
+    
+    width: 98%;
+    margin-top: 15px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px #0000001f;
+    z-index: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(0);
+    animation: apparition_1 300ms linear 100ms  forwards;
+    
+}
+
+
+
+@keyframes apparition_1{
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.selections_menu_entrées h3{
+    margin-top: 18px;
+    margin-bottom: AUTO;
+    margin-left: 15px;
+
+}
+.selections_menu_entrées p {
+    
+    margin-bottom: 20px;
+    margin-top: auto;
+    margin-left: 15px;
+    text-overflow: ellipsis;
+}
+
+.selections_menu_plats{
+    
+    width: 98%;
+    margin-top: 15px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px #0000001f;
+    z-index: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(0);
+    animation: apparition_2 300ms linear 400ms  forwards;
+}
+
+@keyframes apparition_2{
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.selections_menu_plats h3{
+    margin-top: 18px;
+    margin-bottom: AUTO;
+    margin-left: 15px;
+
+}
+.selections_menu_plats p {
+    
+    margin-bottom: 20px;
+    margin-top: auto;
+    margin-left: 15px;
+}
+
+.selections_menu_desserts{
+    
+    width: 98%;
+    margin-top: 15px;
+    background-color: white;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px #0000001f;
+    z-index: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(0);
+    animation: apparition_2 300ms linear 600ms  forwards;
+}
+
+@keyframes apparition_1{
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.selections_menu_desserts h3{
+    margin-top: 18px;
+    margin-bottom: AUTO;
+    margin-left: 15px;
+
+}
+.selections_menu_desserts p {
+    
+    margin-bottom: 20px;
+    margin-top: auto;
+    margin-left: 15px;
+}
+
+
+    .prix{
+        position: absolute;
+        top: 14px;
+        right: -2px;
+        font-weight: bold;
+        transform: translateX(0px);
+        transition: all 0.6s;
+        background-color: white;
+        color: black;
+        width: 57px;
+        height: 57px;
+        display: flex;
+    }
+
+.selections_menu_entrées:hover .prix{
+    transform: translateX(-60px);
+    
+}
+
+.selections_menu_plats:hover .prix{
+    transform: translateX(-60px);
+    
+}
+
+.selections_menu_desserts:hover .prix{
+    transform: translateX(-60px);
+    
+}
+
+.cercle_validation{
+    background-color: #99e2d0;
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 10;
+    transition: all 0.5s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.fa-check-circle{
+    transform: rotate(180deg);
+    color: white;
+    font-size:1.7em ;
+    transition: all 0.8s;
+    
+}
+
+.selections_menu_entrées:hover .fa-check-circle{
+    transform: rotate(360deg);
+}
+
+
+.selections_menu_entrées:hover .cercle_validation {
+    width: 17%;
+}
+
+
+.selections_menu_plats:hover .fa-check-circle{
+    transform: rotate(360deg);
+}
+
+
+.selections_menu_plats:hover .cercle_validation {
+    width: 17%;
+}
+
+.selections_menu_desserts:hover .fa-check-circle{
+    transform: rotate(360deg);
+}
+
+
+.selections_menu_desserts:hover .cercle_validation {
+    width: 17%;
+}
+
+
+#bouton{
+    position: absolute;
+    bottom: 63px;
+
+}
+
+#commander{
+    height: 43px;
+    width: 142px;
+    border-radius: 21px 21px 21px 21px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+  
+         background: linear-gradient( 
+            0deg
+             , #9256dcee 41%, rgb(255, 121, 217) 87%);
+
+         box-shadow: 3px 3px 5px rgb(0 0 0 / 26%);
+         cursor: pointer;
+}
+#commander:hover{
+    
+    background: linear-gradient( 
+       0deg
+        , #9356dcd1 41%, rgb(255 121 218 / 95%) 87%);
+        
+   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.363);
+}
+
+footer{
+    position: absolute;
+    /* bottom: 0px; */
+    top: 1162px;
+    width: 100%;
+    z-index: 6;
+    background-color: rgb(53, 53, 53);
+    height: 197px;
+
+}
+
+
+#liens_bas_de_page{
+    margin-top: 49px;
+    margin-left: 3%;
+    color: white;
+}
+#liens_bas_de_page a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+#liens_bas_de_page a:hover{
+ border-bottom: 2px solid white;
+}
+
+
+#proposer_restaurant{
+    margin-bottom: 13px;
+}
+#proposer_restaurant a{
+    margin-left: 10px;
+}
+#partenaire{
+    margin-top: 13px;
+}
+#partenaire a{
+    margin-bottom: 10px;
+}
+#mentions_legale{
+    margin-top: 13px;
+}
+#Contact{
+    margin-top: 13px;
+}
+
+
+
+
+
+@media all and (max-width:1128px){
+    #carte{
+        display: flex;
+        flex-direction: column;
+        height: 1560px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 23px;
+    }
+
+    #header_card{
+        top: 61px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .entrées_plats_desserts{
+        width: 92%;
+        margin-top: 36px;
+    }
+    .entrées_plats_plats{
+        width: 92%;
+        margin-top: 36px;
+    }
+    .entrées_plats_entrées{
+        width: 92%;
+        margin-top: 36px;
+    }
+    footer{
+        position: absolute;
+        top: 2064px;
+
+    }
+    #bouton{
+        position: absolute;
+        bottom: 100px;
+    }
+    
+    .cercle_validation{
+        visibility: hidden;
+    }
+    .selections_menu_entrées:hover{
+        background-color: #99e2d0;
+        color: whitesmoke;
+        
+    }
+    .selections_menu_entrées:hover .prix{
+        background-color: #99e2d0;
+        color: white;
+        
+    }
+    .selections_menu_plats:hover{
+        background-color: #99e2d0;
+        color: whitesmoke;
+        
+    }
+    .selections_menu_plats:hover .prix{
+        background-color: #99e2d0;
+        color: white;
+        
+    }
+    .selections_menu_desserts:hover{
+        background-color: #99e2d0;
+        color: whitesmoke;
+        
+    }
+    .selections_menu_desserts:hover .prix{
+        background-color: #99e2d0;
+        color: whitesmoke;
+        
+    }
+
+    .selections_menu_entrées:hover .prix{
+        transform: translateX(0px);
+        
+    }
+    .selections_menu_plats:hover .prix{
+        transform: translateX(0px);
+        
+    }
+    
+    .selections_menu_desserts:hover .prix{
+        transform: translateX(0px);
+    }
+
+}
+
+@media all and (max-width:425px){
+    h2,h3,p,a{
+        font-size: medium;
+    }
+}
+
